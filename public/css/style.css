@@ -1,0 +1,56 @@
+body,
+html,
+#app {
+    height: 100%;
+}
+
+.controls .control {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.controls .control>div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fefefe;
+    position: relative;
+    z-index: 2;
+}
+
+.controls .control.active>div,
+.controls .control.active:not(:first-child):before,
+.controls .control.active:not(:last-child):after {
+    background-color: #198754;
+}
+
+.controls .control:not(:first-child):before {
+    position: absolute;
+    content: "";
+    background: #0d6efd;
+    height: 10px;
+    width: 100%;
+    z-index: 0;
+}
+
+.controls .control:not(:last-child):after {
+    position: absolute;
+    content: "";
+    background: #0d6efd;
+    height: 10px;
+    width: 100%;
+    z-index: 0;
+    /* left: 0; */
+}
+
+.steps .step:not(:first-child) {
+    display: none;
+}
